@@ -1,24 +1,24 @@
-//
-//  ContentView.swift
-//  NearChat
-//
-//  Created by Егор Томашев on 11.09.25.
-//
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            TabView {
+                ChatView()
+                    .tabItem {
+                        Image(systemName: "house.fill")
+                        Text("Chat")
+                    }
+                SettingsView()
+                    .tabItem {
+                        Image(systemName: "gear")
+                        Text("Settings")
+                    }
+            }
         }
-        .padding()
     }
 }
-
 #Preview {
     ContentView()
 }

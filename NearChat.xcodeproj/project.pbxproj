@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		9C88202D2E7A228600209F8C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9C88202C2E7A227E00209F8C /* .gitignore */; };
+		9C8820302E7A22EE00209F8C /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 9C88202E2E7A22E800209F8C /* readme.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		9C6DE49A2E72BD57000F23B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +32,8 @@
 		9C6DE48C2E72BD52000F23B3 /* NearChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6DE4992E72BD57000F23B3 /* NearChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6DE4A32E72BD57000F23B3 /* NearChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C88202C2E7A227E00209F8C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		9C88202E2E7A22E800209F8C /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -43,6 +50,11 @@
 		9C6DE4A62E72BD57000F23B3 /* NearChatUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = NearChatUITests;
+			sourceTree = "<group>";
+		};
+		9C8820312E7A244300209F8C /* assets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = assets;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -79,6 +91,9 @@
 				9C6DE49C2E72BD57000F23B3 /* NearChatTests */,
 				9C6DE4A62E72BD57000F23B3 /* NearChatUITests */,
 				9C6DE48D2E72BD52000F23B3 /* Products */,
+				9C88202C2E7A227E00209F8C /* .gitignore */,
+				9C88202E2E7A22E800209F8C /* readme.md */,
+				9C8820312E7A244300209F8C /* assets */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +124,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				9C6DE48E2E72BD52000F23B3 /* NearChat */,
+				9C8820312E7A244300209F8C /* assets */,
 			);
 			name = NearChat;
 			packageProductDependencies = (
@@ -212,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C88202D2E7A228600209F8C /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C8820302E7A22EE00209F8C /* readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
