@@ -5,7 +5,6 @@ struct ContentView: View {
     @StateObject var tcpManager = TCPManager()
 
     var body: some View {
-        // NavigationView теперь внутри каждой вкладки для лучшего управления
         TabView {
             ChatView()
                 .environmentObject(state)
