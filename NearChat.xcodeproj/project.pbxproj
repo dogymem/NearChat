@@ -3,78 +3,73 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9C88202D2E7A228600209F8C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9C88202C2E7A227E00209F8C /* .gitignore */; };
-		9C8820302E7A22EE00209F8C /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 9C88202E2E7A22E800209F8C /* readme.md */; };
+		9C4CEB562E96F45E00700193 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CEB532E96F45E00700193 /* SettingsView.swift */; };
+		9C4CEB572E96F45E00700193 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CEB542E96F45E00700193 /* AppState.swift */; };
+		9C4CEB582E96F45E00700193 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CEB552E96F45E00700193 /* ChatView.swift */; };
+		9C4CEB5A2E96FD2700700193 /* TCPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CEB592E96FD2700700193 /* TCPManager.swift */; };
+		9C4F4CE42E96EEDB0022909C /* NearChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F4CE32E96EEDB0022909C /* NearChatApp.swift */; };
+		9C4F4CE62E96EEDB0022909C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F4CE52E96EEDB0022909C /* ContentView.swift */; };
+		9C4F4CE82E96EEDD0022909C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C4F4CE72E96EEDD0022909C /* Assets.xcassets */; };
+		9C4F4CEB2E96EEDD0022909C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C4F4CEA2E96EEDD0022909C /* Preview Assets.xcassets */; };
+		9C4F4CF52E96EEDD0022909C /* NearChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F4CF42E96EEDD0022909C /* NearChatTests.swift */; };
+		9C4F4CFF2E96EEDE0022909C /* NearChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F4CFE2E96EEDE0022909C /* NearChatUITests.swift */; };
+		9C4F4D012E96EEDE0022909C /* NearChatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F4D002E96EEDE0022909C /* NearChatUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9C6DE49A2E72BD57000F23B3 /* PBXContainerItemProxy */ = {
+		9C4F4CF12E96EEDD0022909C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9C6DE4842E72BD52000F23B3 /* Project object */;
+			containerPortal = 9C4F4CD82E96EEDB0022909C /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 9C6DE48B2E72BD52000F23B3;
+			remoteGlobalIDString = 9C4F4CDF2E96EEDB0022909C;
 			remoteInfo = NearChat;
 		};
-		9C6DE4A42E72BD57000F23B3 /* PBXContainerItemProxy */ = {
+		9C4F4CFB2E96EEDE0022909C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9C6DE4842E72BD52000F23B3 /* Project object */;
+			containerPortal = 9C4F4CD82E96EEDB0022909C /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 9C6DE48B2E72BD52000F23B3;
+			remoteGlobalIDString = 9C4F4CDF2E96EEDB0022909C;
 			remoteInfo = NearChat;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9C6DE48C2E72BD52000F23B3 /* NearChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C6DE4992E72BD57000F23B3 /* NearChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C6DE4A32E72BD57000F23B3 /* NearChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C88202C2E7A227E00209F8C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		9C88202E2E7A22E800209F8C /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		9C4CEB532E96F45E00700193 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		9C4CEB542E96F45E00700193 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		9C4CEB552E96F45E00700193 /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		9C4CEB592E96FD2700700193 /* TCPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPManager.swift; sourceTree = "<group>"; };
+		9C4F4CE02E96EEDB0022909C /* NearChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C4F4CE32E96EEDB0022909C /* NearChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearChatApp.swift; sourceTree = "<group>"; };
+		9C4F4CE52E96EEDB0022909C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9C4F4CE72E96EEDD0022909C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9C4F4CEA2E96EEDD0022909C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9C4F4CF02E96EEDD0022909C /* NearChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C4F4CF42E96EEDD0022909C /* NearChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearChatTests.swift; sourceTree = "<group>"; };
+		9C4F4CFA2E96EEDE0022909C /* NearChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C4F4CFE2E96EEDE0022909C /* NearChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearChatUITests.swift; sourceTree = "<group>"; };
+		9C4F4D002E96EEDE0022909C /* NearChatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearChatUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		9C6DE48E2E72BD52000F23B3 /* NearChat */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = NearChat;
-			sourceTree = "<group>";
-		};
-		9C6DE49C2E72BD57000F23B3 /* NearChatTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = NearChatTests;
-			sourceTree = "<group>";
-		};
-		9C6DE4A62E72BD57000F23B3 /* NearChatUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = NearChatUITests;
-			sourceTree = "<group>";
-		};
-		9C8820312E7A244300209F8C /* assets */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = assets;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
-
 /* Begin PBXFrameworksBuildPhase section */
-		9C6DE4892E72BD52000F23B3 /* Frameworks */ = {
+		9C4F4CDD2E96EEDB0022909C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C6DE4962E72BD57000F23B3 /* Frameworks */ = {
+		9C4F4CED2E96EEDD0022909C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C6DE4A02E72BD57000F23B3 /* Frameworks */ = {
+		9C4F4CF72E96EEDE0022909C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -84,163 +79,183 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9C6DE4832E72BD52000F23B3 = {
+		9C4F4CD72E96EEDB0022909C = {
 			isa = PBXGroup;
 			children = (
-				9C6DE48E2E72BD52000F23B3 /* NearChat */,
-				9C6DE49C2E72BD57000F23B3 /* NearChatTests */,
-				9C6DE4A62E72BD57000F23B3 /* NearChatUITests */,
-				9C6DE48D2E72BD52000F23B3 /* Products */,
-				9C88202C2E7A227E00209F8C /* .gitignore */,
-				9C88202E2E7A22E800209F8C /* readme.md */,
-				9C8820312E7A244300209F8C /* assets */,
+				9C4F4CE22E96EEDB0022909C /* NearChat */,
+				9C4F4CF32E96EEDD0022909C /* NearChatTests */,
+				9C4F4CFD2E96EEDE0022909C /* NearChatUITests */,
+				9C4F4CE12E96EEDB0022909C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		9C6DE48D2E72BD52000F23B3 /* Products */ = {
+		9C4F4CE12E96EEDB0022909C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9C6DE48C2E72BD52000F23B3 /* NearChat.app */,
-				9C6DE4992E72BD57000F23B3 /* NearChatTests.xctest */,
-				9C6DE4A32E72BD57000F23B3 /* NearChatUITests.xctest */,
+				9C4F4CE02E96EEDB0022909C /* NearChat.app */,
+				9C4F4CF02E96EEDD0022909C /* NearChatTests.xctest */,
+				9C4F4CFA2E96EEDE0022909C /* NearChatUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9C4F4CE22E96EEDB0022909C /* NearChat */ = {
+			isa = PBXGroup;
+			children = (
+				9C4CEB542E96F45E00700193 /* AppState.swift */,
+				9C4CEB592E96FD2700700193 /* TCPManager.swift */,
+				9C4CEB552E96F45E00700193 /* ChatView.swift */,
+				9C4CEB532E96F45E00700193 /* SettingsView.swift */,
+				9C4F4CE32E96EEDB0022909C /* NearChatApp.swift */,
+				9C4F4CE52E96EEDB0022909C /* ContentView.swift */,
+				9C4F4CE72E96EEDD0022909C /* Assets.xcassets */,
+				9C4F4CE92E96EEDD0022909C /* Preview Content */,
+			);
+			path = NearChat;
+			sourceTree = "<group>";
+		};
+		9C4F4CE92E96EEDD0022909C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9C4F4CEA2E96EEDD0022909C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9C4F4CF32E96EEDD0022909C /* NearChatTests */ = {
+			isa = PBXGroup;
+			children = (
+				9C4F4CF42E96EEDD0022909C /* NearChatTests.swift */,
+			);
+			path = NearChatTests;
+			sourceTree = "<group>";
+		};
+		9C4F4CFD2E96EEDE0022909C /* NearChatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9C4F4CFE2E96EEDE0022909C /* NearChatUITests.swift */,
+				9C4F4D002E96EEDE0022909C /* NearChatUITestsLaunchTests.swift */,
+			);
+			path = NearChatUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9C6DE48B2E72BD52000F23B3 /* NearChat */ = {
+		9C4F4CDF2E96EEDB0022909C /* NearChat */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C6DE4AD2E72BD57000F23B3 /* Build configuration list for PBXNativeTarget "NearChat" */;
+			buildConfigurationList = 9C4F4D042E96EEDE0022909C /* Build configuration list for PBXNativeTarget "NearChat" */;
 			buildPhases = (
-				9C6DE4882E72BD52000F23B3 /* Sources */,
-				9C6DE4892E72BD52000F23B3 /* Frameworks */,
-				9C6DE48A2E72BD52000F23B3 /* Resources */,
+				9C4F4CDC2E96EEDB0022909C /* Sources */,
+				9C4F4CDD2E96EEDB0022909C /* Frameworks */,
+				9C4F4CDE2E96EEDB0022909C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				9C6DE48E2E72BD52000F23B3 /* NearChat */,
-				9C8820312E7A244300209F8C /* assets */,
 			);
 			name = NearChat;
-			packageProductDependencies = (
-			);
 			productName = NearChat;
-			productReference = 9C6DE48C2E72BD52000F23B3 /* NearChat.app */;
+			productReference = 9C4F4CE02E96EEDB0022909C /* NearChat.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9C6DE4982E72BD57000F23B3 /* NearChatTests */ = {
+		9C4F4CEF2E96EEDD0022909C /* NearChatTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C6DE4B02E72BD57000F23B3 /* Build configuration list for PBXNativeTarget "NearChatTests" */;
+			buildConfigurationList = 9C4F4D072E96EEDE0022909C /* Build configuration list for PBXNativeTarget "NearChatTests" */;
 			buildPhases = (
-				9C6DE4952E72BD57000F23B3 /* Sources */,
-				9C6DE4962E72BD57000F23B3 /* Frameworks */,
-				9C6DE4972E72BD57000F23B3 /* Resources */,
+				9C4F4CEC2E96EEDD0022909C /* Sources */,
+				9C4F4CED2E96EEDD0022909C /* Frameworks */,
+				9C4F4CEE2E96EEDD0022909C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9C6DE49B2E72BD57000F23B3 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				9C6DE49C2E72BD57000F23B3 /* NearChatTests */,
+				9C4F4CF22E96EEDD0022909C /* PBXTargetDependency */,
 			);
 			name = NearChatTests;
-			packageProductDependencies = (
-			);
 			productName = NearChatTests;
-			productReference = 9C6DE4992E72BD57000F23B3 /* NearChatTests.xctest */;
+			productReference = 9C4F4CF02E96EEDD0022909C /* NearChatTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9C6DE4A22E72BD57000F23B3 /* NearChatUITests */ = {
+		9C4F4CF92E96EEDE0022909C /* NearChatUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C6DE4B32E72BD57000F23B3 /* Build configuration list for PBXNativeTarget "NearChatUITests" */;
+			buildConfigurationList = 9C4F4D0A2E96EEDE0022909C /* Build configuration list for PBXNativeTarget "NearChatUITests" */;
 			buildPhases = (
-				9C6DE49F2E72BD57000F23B3 /* Sources */,
-				9C6DE4A02E72BD57000F23B3 /* Frameworks */,
-				9C6DE4A12E72BD57000F23B3 /* Resources */,
+				9C4F4CF62E96EEDE0022909C /* Sources */,
+				9C4F4CF72E96EEDE0022909C /* Frameworks */,
+				9C4F4CF82E96EEDE0022909C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9C6DE4A52E72BD57000F23B3 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				9C6DE4A62E72BD57000F23B3 /* NearChatUITests */,
+				9C4F4CFC2E96EEDE0022909C /* PBXTargetDependency */,
 			);
 			name = NearChatUITests;
-			packageProductDependencies = (
-			);
 			productName = NearChatUITests;
-			productReference = 9C6DE4A32E72BD57000F23B3 /* NearChatUITests.xctest */;
+			productReference = 9C4F4CFA2E96EEDE0022909C /* NearChatUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9C6DE4842E72BD52000F23B3 /* Project object */ = {
+		9C4F4CD82E96EEDB0022909C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1640;
-				LastUpgradeCheck = 1640;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
-					9C6DE48B2E72BD52000F23B3 = {
-						CreatedOnToolsVersion = 16.4;
+					9C4F4CDF2E96EEDB0022909C = {
+						CreatedOnToolsVersion = 15.2;
 					};
-					9C6DE4982E72BD57000F23B3 = {
-						CreatedOnToolsVersion = 16.4;
-						TestTargetID = 9C6DE48B2E72BD52000F23B3;
+					9C4F4CEF2E96EEDD0022909C = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 9C4F4CDF2E96EEDB0022909C;
 					};
-					9C6DE4A22E72BD57000F23B3 = {
-						CreatedOnToolsVersion = 16.4;
-						TestTargetID = 9C6DE48B2E72BD52000F23B3;
+					9C4F4CF92E96EEDE0022909C = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 9C4F4CDF2E96EEDB0022909C;
 					};
 				};
 			};
-			buildConfigurationList = 9C6DE4872E72BD52000F23B3 /* Build configuration list for PBXProject "NearChat" */;
+			buildConfigurationList = 9C4F4CDB2E96EEDB0022909C /* Build configuration list for PBXProject "NearChat" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 9C6DE4832E72BD52000F23B3;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
-			productRefGroup = 9C6DE48D2E72BD52000F23B3 /* Products */;
+			mainGroup = 9C4F4CD72E96EEDB0022909C;
+			productRefGroup = 9C4F4CE12E96EEDB0022909C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9C6DE48B2E72BD52000F23B3 /* NearChat */,
-				9C6DE4982E72BD57000F23B3 /* NearChatTests */,
-				9C6DE4A22E72BD57000F23B3 /* NearChatUITests */,
+				9C4F4CDF2E96EEDB0022909C /* NearChat */,
+				9C4F4CEF2E96EEDD0022909C /* NearChatTests */,
+				9C4F4CF92E96EEDE0022909C /* NearChatUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9C6DE48A2E72BD52000F23B3 /* Resources */ = {
+		9C4F4CDE2E96EEDB0022909C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C88202D2E7A228600209F8C /* .gitignore in Resources */,
+				9C4F4CEB2E96EEDD0022909C /* Preview Assets.xcassets in Resources */,
+				9C4F4CE82E96EEDD0022909C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C6DE4972E72BD57000F23B3 /* Resources */ = {
+		9C4F4CEE2E96EEDD0022909C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C8820302E7A22EE00209F8C /* readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C6DE4A12E72BD57000F23B3 /* Resources */ = {
+		9C4F4CF82E96EEDE0022909C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -250,44 +265,53 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9C6DE4882E72BD52000F23B3 /* Sources */ = {
+		9C4F4CDC2E96EEDB0022909C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C4CEB562E96F45E00700193 /* SettingsView.swift in Sources */,
+				9C4CEB5A2E96FD2700700193 /* TCPManager.swift in Sources */,
+				9C4F4CE62E96EEDB0022909C /* ContentView.swift in Sources */,
+				9C4CEB582E96F45E00700193 /* ChatView.swift in Sources */,
+				9C4F4CE42E96EEDB0022909C /* NearChatApp.swift in Sources */,
+				9C4CEB572E96F45E00700193 /* AppState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C6DE4952E72BD57000F23B3 /* Sources */ = {
+		9C4F4CEC2E96EEDD0022909C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C4F4CF52E96EEDD0022909C /* NearChatTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C6DE49F2E72BD57000F23B3 /* Sources */ = {
+		9C4F4CF62E96EEDE0022909C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C4F4D012E96EEDE0022909C /* NearChatUITestsLaunchTests.swift in Sources */,
+				9C4F4CFF2E96EEDE0022909C /* NearChatUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9C6DE49B2E72BD57000F23B3 /* PBXTargetDependency */ = {
+		9C4F4CF22E96EEDD0022909C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9C6DE48B2E72BD52000F23B3 /* NearChat */;
-			targetProxy = 9C6DE49A2E72BD57000F23B3 /* PBXContainerItemProxy */;
+			target = 9C4F4CDF2E96EEDB0022909C /* NearChat */;
+			targetProxy = 9C4F4CF12E96EEDD0022909C /* PBXContainerItemProxy */;
 		};
-		9C6DE4A52E72BD57000F23B3 /* PBXTargetDependency */ = {
+		9C4F4CFC2E96EEDE0022909C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9C6DE48B2E72BD52000F23B3 /* NearChat */;
-			targetProxy = 9C6DE4A42E72BD57000F23B3 /* PBXContainerItemProxy */;
+			target = 9C4F4CDF2E96EEDB0022909C /* NearChat */;
+			targetProxy = 9C4F4CFB2E96EEDE0022909C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		9C6DE4AB2E72BD57000F23B3 /* Debug */ = {
+		9C4F4D022E96EEDE0022909C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -322,7 +346,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 646KSFTWK6;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -340,7 +363,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -351,7 +374,7 @@
 			};
 			name = Debug;
 		};
-		9C6DE4AC2E72BD57000F23B3 /* Release */ = {
+		9C4F4D032E96EEDE0022909C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -386,7 +409,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 646KSFTWK6;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -398,7 +420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -408,13 +430,14 @@
 			};
 			name = Release;
 		};
-		9C6DE4AE2E72BD57000F23B3 /* Debug */ = {
+		9C4F4D052E96EEDE0022909C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NearChat/Preview Content\"";
 				DEVELOPMENT_TEAM = 646KSFTWK6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -436,13 +459,14 @@
 			};
 			name = Debug;
 		};
-		9C6DE4AF2E72BD57000F23B3 /* Release */ = {
+		9C4F4D062E96EEDE0022909C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NearChat/Preview Content\"";
 				DEVELOPMENT_TEAM = 646KSFTWK6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -464,15 +488,15 @@
 			};
 			name = Release;
 		};
-		9C6DE4B12E72BD57000F23B3 /* Debug */ = {
+		9C4F4D082E96EEDE0022909C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 646KSFTWK6;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dogymem.NearChatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -483,15 +507,15 @@
 			};
 			name = Debug;
 		};
-		9C6DE4B22E72BD57000F23B3 /* Release */ = {
+		9C4F4D092E96EEDE0022909C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 646KSFTWK6;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dogymem.NearChatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -502,12 +526,12 @@
 			};
 			name = Release;
 		};
-		9C6DE4B42E72BD57000F23B3 /* Debug */ = {
+		9C4F4D0B2E96EEDE0022909C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 646KSFTWK6;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dogymem.NearChatUITests;
@@ -519,12 +543,12 @@
 			};
 			name = Debug;
 		};
-		9C6DE4B52E72BD57000F23B3 /* Release */ = {
+		9C4F4D0C2E96EEDE0022909C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 646KSFTWK6;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dogymem.NearChatUITests;
@@ -539,43 +563,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9C6DE4872E72BD52000F23B3 /* Build configuration list for PBXProject "NearChat" */ = {
+		9C4F4CDB2E96EEDB0022909C /* Build configuration list for PBXProject "NearChat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9C6DE4AB2E72BD57000F23B3 /* Debug */,
-				9C6DE4AC2E72BD57000F23B3 /* Release */,
+				9C4F4D022E96EEDE0022909C /* Debug */,
+				9C4F4D032E96EEDE0022909C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C6DE4AD2E72BD57000F23B3 /* Build configuration list for PBXNativeTarget "NearChat" */ = {
+		9C4F4D042E96EEDE0022909C /* Build configuration list for PBXNativeTarget "NearChat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9C6DE4AE2E72BD57000F23B3 /* Debug */,
-				9C6DE4AF2E72BD57000F23B3 /* Release */,
+				9C4F4D052E96EEDE0022909C /* Debug */,
+				9C4F4D062E96EEDE0022909C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C6DE4B02E72BD57000F23B3 /* Build configuration list for PBXNativeTarget "NearChatTests" */ = {
+		9C4F4D072E96EEDE0022909C /* Build configuration list for PBXNativeTarget "NearChatTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9C6DE4B12E72BD57000F23B3 /* Debug */,
-				9C6DE4B22E72BD57000F23B3 /* Release */,
+				9C4F4D082E96EEDE0022909C /* Debug */,
+				9C4F4D092E96EEDE0022909C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C6DE4B32E72BD57000F23B3 /* Build configuration list for PBXNativeTarget "NearChatUITests" */ = {
+		9C4F4D0A2E96EEDE0022909C /* Build configuration list for PBXNativeTarget "NearChatUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9C6DE4B42E72BD57000F23B3 /* Debug */,
-				9C6DE4B52E72BD57000F23B3 /* Release */,
+				9C4F4D0B2E96EEDE0022909C /* Debug */,
+				9C4F4D0C2E96EEDE0022909C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 9C6DE4842E72BD52000F23B3 /* Project object */;
+	rootObject = 9C4F4CD82E96EEDB0022909C /* Project object */;
 }

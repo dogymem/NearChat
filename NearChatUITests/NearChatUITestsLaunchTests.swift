@@ -2,7 +2,7 @@
 //  NearChatUITestsLaunchTests.swift
 //  NearChatUITests
 //
-//  Created by Егор Томашев on 11.09.25.
+//  Created by Егор Томашев on 8.10.25.
 //
 
 import XCTest
@@ -17,7 +17,6 @@ final class NearChatUITestsLaunchTests: XCTestCase {
         continueAfterFailure = false
     }
 
-    @MainActor
     func testLaunch() throws {
         let app = XCUIApplication()
         app.launch()

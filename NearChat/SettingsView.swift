@@ -1,131 +1,143 @@
 import SwiftUI
+import Foundation
+import SystemConfiguration
+import UIKit
 
 struct SettingsView: View {
-    @StateObject var state = AppState()
+    @EnvironmentObject var state: AppState
+    @EnvironmentObject var tcpManager: TCPManager
+    
     @State private var newNickname: String = ""
-    @State private var selectedMode: String = "Клиент"
-    @State private var connectionStatus: String = ""
+    
+    // Свойство для текста статуса, теперь обрабатывает все режимы
+    private var statusText: String {
+        // Для сервера показываем IP и порт, если он запущен
+        if state.selectedMode == "Сервер", tcpManager.connectionStatus == .listening {
+            return "Сервер слушает порт \(state.serverPort)"
+        }
+        return tcpManager.connectionStatus.description
+    }
+
+    // Свойство для цвета статуса
+    private var statusColor: Color {
+        switch tcpManager.connectionStatus {
+        case .idle, .connecting, .stopped:
+            return .secondary
+        case .connected, .listening:
+            return .green
+        case .failed, .disconnected:
+            return .red
+        }
+    }
     
     var body: some View {
-        VStack{
-            VStack(spacing: 20) {
-                Text("Выберите никнейм")
-                    .font(.title)
-                
-                TextField("Введите никнейм", text: $newNickname)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                
-                Button("Сохранить") {
-                    state.nickname = newNickname   // сохраняем
+        NavigationView {
+            Form {
+                Section("Настройки пользователя") {
+                    TextField("Ваш никнейм", text: $newNickname)
+                        .autocorrectionDisabled().textInputAutocapitalization(.never)
+                    
+                    Button("Сохранить никнейм") {
+                        state.nickname = newNickname
+                        hideKeyboard()
+                    }.disabled(newNickname.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                 }
-                .buttonStyle(.borderedProminent)
                 
-                if !state.nickname.isEmpty {
-                    Text("Ваш никнейм: \(state.nickname)")
-                        .font(.headline)
-                }
-            }
-            .onAppear {
-                newNickname = state.nickname
-            }
-            
-            VStack(spacing: 20) {
-                Text("Выберите режим работы")
-                    .font(.title)
-                
-                Picker("Режим", selection: $selectedMode) {
-                    Text("Сервер").tag("Сервер")
-                    Text("Клиент").tag("Клиент")
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
-                
-                if selectedMode == "Сервер" {
-                    VStack {
-                        Text("IP устройства:")
-                            .font(.headline)
-                        Text(state.deviceIP.isEmpty ? "Определяется..." : state.deviceIP)
-                            .font(.body)
-                            .padding()
-                            .background(Color.gray.opacity(0.2))
-                            .cornerRadius(8)
+                Section("Режим работы") {
+                    Picker("Режим", selection: $state.selectedMode) {
+                        Text("Не выбрано").tag("")
+                        Text("Сервер").tag("Сервер")
+                        Text("Клиент").tag("Клиент")
                     }
-                    .onAppear {
-                        state.deviceIP = getWiFiAddress() ?? "Не удалось определить"
+                    .pickerStyle(SegmentedPickerStyle())
+                    .onChange(of: state.selectedMode) { newMode in
+                        // Централизованное управление запуском/остановкой
+                        tcpManager.stop()
+                        if newMode == "Сервер" {
+                            startServer()
+                        }
                     }
-                } else if selectedMode == "Клиент" {
-                    VStack(spacing: 15) {
-                        TextField("Введите IP сервера", text: $state.serverIP)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
+                
+                if state.selectedMode == "Сервер" {
+                    Section("Настройки сервера") {
+                        HStack {
+                            Text("IP устройства:")
+                            Spacer()
+                            Text(state.deviceIP.isEmpty ? "Определяется..." : state.deviceIP)
+                        }
+                        .onAppear {
+                            state.deviceIP = getWiFiAddress() ?? "Не удалось определить"
+                        }
+                        TextField("Порт сервера", text: $state.serverPort).keyboardType(.numberPad)
+                    }
+                } else if state.selectedMode == "Клиент" {
+                    Section("Настройки клиента") {
+                        TextField("IP сервера", text: $state.serverIP)
                             .keyboardType(.numbersAndPunctuation)
-                            .padding(.horizontal)
+                            .autocorrectionDisabled().textInputAutocapitalization(.never)
                         
-                        Button("Connect") {
-                            connectToServer(ip: state.serverIP)
-                        }
-                        .buttonStyle(.borderedProminent)
+                        TextField("Порт сервера", text: $state.serverPort).keyboardType(.numberPad)
                         
-                        if !connectionStatus.isEmpty {
-                            Text(connectionStatus)
-                                .foregroundColor(.gray)
+                        HStack {
+                            Button("Подключиться") {
+                                connectToServer()
+                            }
+                            .disabled(state.serverIP.isEmpty || state.serverPort.isEmpty || tcpManager.connectionStatus == .connecting)
                         }
                     }
                 }
+                
+                // Секция статуса, видна всегда, когда выбран режим
+                if !state.selectedMode.isEmpty {
+                    Section("Статус") {
+                        Text(statusText)
+                            .font(.caption)
+                            .foregroundColor(statusColor)
+                    }
+                }
             }
-        }
-        .padding()
-        
-    }
-    
-    
-    func connectToServer(ip: String) {
-        if ip.isEmpty {
-            connectionStatus = "Введите IP"
-        } else {
-            connectionStatus = "Подключаюсь к \(ip)..."
-            // тут позже можно сделать реальное подключение через NWConnection
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                connectionStatus = "Успешно подключено к \(ip)"
-            }
+            .navigationTitle("Настройки")
+            .onAppear { newNickname = state.nickname }
         }
     }
     
+    private func startServer() {
+        guard let port = UInt16(state.serverPort) else {
+            print("Некорректный номер порта: \(state.serverPort)")
+            tcpManager.connectionStatus = .failed("Неверный порт")
+            return
+        }
+        tcpManager.startServer(port: port)
+    }
+    
+    private func connectToServer() {
+        hideKeyboard()
+        guard let port = UInt16(state.serverPort) else {
+            tcpManager.connectionStatus = .failed("Неверный порт")
+            return
+        }
+        tcpManager.startClient(host: state.serverIP, port: port)
+    }
+    
+    private func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+
     func getWiFiAddress() -> String? {
         var address: String?
         var ifaddr: UnsafeMutablePointer<ifaddrs>?
-        
-        guard getifaddrs(&ifaddr) == 0, let firstAddr = ifaddr else {
-            return nil
-        }
-        
+        guard getifaddrs(&ifaddr) == 0, let firstAddr = ifaddr else { return nil }
         for ptr in sequence(first: firstAddr, next: { $0.pointee.ifa_next }) {
             let interface = ptr.pointee
-            
             let addrFamily = interface.ifa_addr.pointee.sa_family
-            if addrFamily == UInt8(AF_INET) { // IPv4
-                let name = String(cString: interface.ifa_name)
-                if name == "en0" { // Wi-Fi интерфейс
-                    var addr = interface.ifa_addr.pointee
-                    var hostname = [CChar](repeating: 0, count: Int(NI_MAXHOST))
-                    getnameinfo(&addr,
-                                socklen_t(interface.ifa_addr.pointee.sa_len),
-                                &hostname,
-                                socklen_t(hostname.count),
-                                nil,
-                                socklen_t(0),
-                                NI_NUMERICHOST)
-                    address = String(cString: hostname)
-                }
+            if addrFamily == UInt8(AF_INET) && (String(cString: interface.ifa_name) == "en0") {
+                var hostname = [CChar](repeating: 0, count: Int(NI_MAXHOST))
+                getnameinfo(interface.ifa_addr, socklen_t(interface.ifa_addr.pointee.sa_len), &hostname, socklen_t(hostname.count), nil, socklen_t(0), NI_NUMERICHOST)
+                address = String(cString: hostname)
             }
         }
         freeifaddrs(ifaddr)
-        
         return address
     }
-}
-
-
-#Preview {
-    SettingsView()
 }

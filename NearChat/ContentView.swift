@@ -1,24 +1,34 @@
-
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var state = AppState()
+    @StateObject var tcpManager = TCPManager()
+
     var body: some View {
-        NavigationView {
-            TabView {
-                ChatView()
-                    .tabItem {
-                        Image(systemName: "house.fill")
-                        Text("Chat")
-                    }
-                SettingsView()
-                    .tabItem {
-                        Image(systemName: "gear")
-                        Text("Settings")
-                    }
-            }
+        // NavigationView теперь внутри каждой вкладки для лучшего управления
+        TabView {
+            ChatView()
+                .environmentObject(state)
+                .environmentObject(tcpManager)
+                .tabItem {
+                    Image(systemName: "message.fill")
+                    Text("Чат")
+                }
+            
+            SettingsView()
+                .environmentObject(state)
+                .environmentObject(tcpManager)
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Настройки")
+                }
         }
+
     }
 }
-#Preview {
-    ContentView()
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
