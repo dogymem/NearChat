@@ -6,17 +6,17 @@ struct ChatView: View {
 
     @State private var newMessage: String = ""
 
-    // Логика блокировки ВСЕГО ЭКРАНА (оверлей)
+    
     private var isLocked: Bool {
         if state.selectedMode.isEmpty { return true }
         
         if state.selectedMode == "Сервер" {
-            // Блокируем, если сервер не в состоянии прослушивания
+            
             return tcpManager.connectionStatus != .listening
         }
         
         if state.selectedMode == "Клиент" {
-            // Блокируем, если клиент не подключен
+            
             return tcpManager.connectionStatus != .connected
         }
         
@@ -75,10 +75,10 @@ struct ChatView: View {
         .blur(radius: isLocked ? 3 : 0)
         .overlay(isLocked ? lockOverlay : nil)
         .animation(.easeInOut(duration: 0.3), value: isLocked)
-        // Системное сообщение о потере связи теперь генерируется в самом TCPManager
+        
     }
 
-    // Overlay, который показывает текущий статус
+    
     private var lockOverlay: some View {
         Color.black.opacity(0.4).ignoresSafeArea()
             .overlay(
@@ -95,7 +95,7 @@ struct ChatView: View {
         
         switch tcpManager.connectionStatus {
         case .listening:
-            return "Сервер запущен и ожидает клиентов..." // Текст для работающего сервера
+            return "Сервер запущен и ожидает клиентов..." 
         case .connecting:
             return "Подключение к серверу..."
         case .failed(let error):

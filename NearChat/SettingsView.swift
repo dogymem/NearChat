@@ -9,16 +9,16 @@ struct SettingsView: View {
     
     @State private var newNickname: String = ""
     
-    // Свойство для текста статуса, теперь обрабатывает все режимы
+    
     private var statusText: String {
-        // Для сервера показываем IP и порт, если он запущен
+        
         if state.selectedMode == "Сервер", tcpManager.connectionStatus == .listening {
             return "Сервер слушает порт \(state.serverPort)"
         }
         return tcpManager.connectionStatus.description
     }
 
-    // Свойство для цвета статуса
+    
     private var statusColor: Color {
         switch tcpManager.connectionStatus {
         case .idle, .connecting, .stopped:
@@ -51,7 +51,7 @@ struct SettingsView: View {
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     .onChange(of: state.selectedMode) { newMode in
-                        // Централизованное управление запуском/остановкой
+                        
                         tcpManager.stop()
                         if newMode == "Сервер" {
                             startServer()
@@ -88,7 +88,7 @@ struct SettingsView: View {
                     }
                 }
                 
-                // Секция статуса, видна всегда, когда выбран режим
+                
                 if !state.selectedMode.isEmpty {
                     Section("Статус") {
                         Text(statusText)

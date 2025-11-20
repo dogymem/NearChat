@@ -1,36 +1,69 @@
-//
-//  NearChatTests.swift
-//  NearChatTests
-//
-//  Created by Егор Томашев on 8.10.25.
-//
-
 import XCTest
 @testable import NearChat
 
 final class NearChatTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var tcpManager: TCPManager!
+    var appState: AppState!
+
+    @MainActor override func setUpWithError() throws {
+        tcpManager = TCPManager()
+        appState = AppState()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        tcpManager = nil
+        appState = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    @MainActor func testMessageCreationFormat() throws {
+        
+        let nickname = "TestUser"
+        let message = "Hello"
+        
+        
+        let fullMessage = tcpManager.createFullMessage(message: message, nickname: nickname)
+        
+        
+        
+        let parts = fullMessage.split(separator: ":")
+        XCTAssertEqual(parts.count, 3, "Сообщение должно состоять из 3 частей: Time:Nick:Msg")
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    @MainActor func testBase64Encoding() throws {
+        
+        let nickname = "User"
+        let message = "Hello" 
+        
+        
+        let fullMessage = tcpManager.createFullMessage(message: message, nickname: nickname)
+        let parts = fullMessage.split(separator: ":")
+        
+        
+        let encodedMsg = String(parts[2])
+        XCTAssertEqual(encodedMsg, "SGVsbG8=", "Сообщение должно быть закодировано в Base64")
     }
 
+    
+    @MainActor func testSpecialCharacters() throws {
+        
+        let nickname = "User:Name" 
+        let message = "Hi 👋"       
+        
+        
+        let fullMessage = tcpManager.createFullMessage(message: message, nickname: nickname)
+        let parts = fullMessage.split(separator: ":")
+        
+        
+        
+        let decodedNickData = Data(base64Encoded: String(parts[1]))!
+        let decodedMsgData = Data(base64Encoded: String(parts[2]))!
+        
+        let decodedNick = String(data: decodedNickData, encoding: .utf8)
+        let decodedMsg = String(data: decodedMsgData, encoding: .utf8)
+        
+        XCTAssertEqual(decodedNick, "User:Name", "Никнейм с двоеточием должен восстановиться корректно")
+        XCTAssertEqual(decodedMsg, "Hi 👋", "Сообщение с эмодзи должно восстановиться корректно")
+    }
 }
